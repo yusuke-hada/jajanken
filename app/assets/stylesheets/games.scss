@@ -1,0 +1,48 @@
+// Place all the styles related to the Games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn-choice{
+    max-width: 200px; /* 画像の最大幅を指定 */
+    max-height: 200px;    /* 高さを自動調整 */
+}
+
+.inline-block {
+    display: inline-block;
+} 
+
+.choices-container{
+    font-size: 30px;
+}
+
+.result-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  font-size: 30px; 
+}
+  
+.result-container .computer-choice {
+    margin-top: 10px;
+}
+
+h1{
+  font-size: 100px;
+}
+
+.win-text,
+.draw-text,
+.lose-text {
+  font-size: 28px; /* 勝ち・引き分け・負けメッセージのフォントサイズ */
+}
+
+.result-text {
+  font-size: 30px; /* 例えば、24px のフォントサイズを適用 */
+}
+
+.btn-special-win.hidden {
+  opacity: 0;
+}
+
+.random-comment {
+  font-size: 30px;
+}

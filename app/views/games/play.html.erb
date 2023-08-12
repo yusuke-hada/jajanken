@@ -1,0 +1,61 @@
+<div class="text-center mt-5">
+  <h1>俺様に勝てるか？</h1>
+
+  
+    <%= form_tag("/play", method: "get", class: "d-inline-block") do %>
+     <div class="choices-container"> 
+      <p>プレイヤーの選択</p>
+      <%= button_tag(type: "submit", name: "player_choice", value: "0", class: "btn-choice") do %>
+        <%= image_tag("rock.png", alt: "グー",class: "btn-choice") %>
+      <% end %>
+      <%= button_tag(type: "submit", name: "player_choice", value: "1", class: "btn-choice") do %>
+        <%= image_tag("scissors.png", alt: "チョキ",class: "btn-choice") %>
+      <% end %>
+      <%= button_tag(type: "submit", name: "player_choice", value: "2", class: "btn-choice") do %>
+        <%= image_tag("paper.png", alt: "パー",class: "btn-choice") %>
+      <% end %>
+     </div>
+     <div class="special-win-button-container">
+       <%= button_tag(type: "submit", name: "special_choice", value: "rock_scissors", class: "btn-special-win hidden") do %>
+         Vボタン
+       <% end %>
+       <%= button_tag(type: "submit", name: "special_choice", value: "scissors_paper",class: "btn-special-win hidden") do %>
+        Vボタン
+      <% end %>
+      <%= button_tag(type: "submit", name: "special_choice", value: "paper_rock", class: "btn-special-win hidden") do %>
+        Vボタン
+      <% end %>
+     </div>
+    <% end %>
+ 
+    <div class= "result-container">
+      <div class= "text-center">
+        <p>プレイヤーの選択</p>
+        <%= image_tag(image_path_for_choice(@player_choice), class: "btn-choice", alt: choice_label(@player_choice)) %>
+      </div>
+      <div class= "text-center">
+        <p>コンピューターの選択</p>
+          <div class="computer-choice">
+            <% if @result.present? %>
+              <%= image_tag(image_path_for_choice(@computer_choice), class: "btn-choice", alt: choice_label(@computer_choice)) %>
+            <% end %>
+         </div>
+      </div>
+    </div>
+    <p class="result-text">
+      <strong><%= @result %></strong>
+    </p>
+    <div class="random-comment">
+      <% if @result == "プレイヤーの勝ち" %>
+        <div class ="win-comment">
+          <%= win_comment %>
+        </div>
+      <% elsif @result == "プレイヤーの勝ち(特殊勝利)" %>
+        <div class ="unwin-comment">
+          <%= unwin_comment %>
+        </div>
+      <% else %>
+        <%= random_comment %>
+      <% end %>
+    </div>
+</div>
