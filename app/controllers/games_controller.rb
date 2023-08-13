@@ -19,6 +19,14 @@ class GamesController < ApplicationController
           @computer_choice = get_computer_choice
           @result = judge(@player_choice, @computer_choice)
         end
+        
+        if @result == "プレイヤーの勝ち"
+            @comment = win_comment
+        elsif @result == "プレイヤーの勝ち(特殊勝利)"
+            @comment = unwin_comment
+        else
+            @comment = random_comment
+        end
       end
   
     private

@@ -46,20 +46,13 @@
       <strong><%= @result %></strong>
     </p>
     <div class="random-comment">
-      <% if @result == "プレイヤーの勝ち" %>
-        <div class ="win-comment">
-          <%= win_comment %>
-        </div>
-      <% elsif @result == "プレイヤーの勝ち(特殊勝利)" %>
-        <div class ="unwin-comment">
-          <%= unwin_comment %>
-        </div>
-      <% else %>
-        <%= random_comment %>
-      <% end %>
+      <%= @comment %>
+    </div>
+
       <div class ="text-center title ">
-        <%= link_to 'Twitter', "[<https://twitter.com/share?url=#{https://jajanken-jvpb.onrender.com}>](<https://twitter.com/share?url=#%7Brequest.url%7D>)", title: 'Twitter', target: '_blank' %>
-        
+        <%= link_to "https://twitter.com/share?url=#{"https://jajanken-jvpb.onrender.com"}&text=【じゃんけんの結果は、、、】%0a%0a#{ @result }%0a#{@comment}", target: '_blank', class: "share-button" do %>
+          <i class="fab fa-twitter" style='color: #3399FF;'></i>シェア
+        <% end %>
       </div>
     </div>
 </div>
