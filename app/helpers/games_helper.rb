@@ -41,6 +41,7 @@ module GamesHelper
     comments = [
       "君には完敗だよ、一から出直します",
       "罵詈雑言を浴びせてごめんね、寂しかったんだ"
+      "純正九連宝燈と同じ確率だよ！おめでとう！"
     ]
     comments.sample
   end
@@ -50,6 +51,7 @@ module GamesHelper
       "ズルしてでも勝ちたかったんだ？かわいいね",
       "よちよち",
       "おめでとー(特殊勝利)"
+      "エクゾディアみたいな勝ち方〜"
     ]
     comments.sample
   end
